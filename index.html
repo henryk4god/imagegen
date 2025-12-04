@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Prompt Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖼️ Image Prompt Generator</h1>
+            <p>Generate high-converting image prompts for your marketing assets.</p>
+        </header>
+
+        <form id="prompt-form">
+            <div class="input-group">
+                <label for="marketing-asset">Marketing Asset:</label>
+                <select id="marketing-asset" name="marketingAsset" required>
+                    <option value="" disabled selected>Select an asset type</option>
+                    <option value="Product cover mockups">Product cover mockups</option>
+                    <option value="Promo banners">Promo banners</option>
+                    <option value="Carousel posts">Carousel posts</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="product-promise">Product Promise (e.g., "Achieve financial freedom in 90 days"):</label>
+                <textarea id="product-promise" name="productPromise" rows="3" placeholder="Enter your product's main benefit or promise..." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-button" class="pulse">
+                <span id="button-text">Get Image Prompt</span>
+                <div class="spinner"></div>
+            </button>
+        </form>
+
+        <div id="results-container" class="card hidden">
+            <h2 class="spin">Generated Prompt</h2>
+            <div id="prompt-output" class="fade-in"></div>
+        </div>
+
+        <div id="error-message" class="card error-card hidden">
+            <p>An error occurred. Please try again.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
